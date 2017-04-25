@@ -1,0 +1,1 @@
+java -cp SBML2MetexploreJsonGraph.jar org.junit.runner.JUnitCore phnmnl.tests.Test5_Main
