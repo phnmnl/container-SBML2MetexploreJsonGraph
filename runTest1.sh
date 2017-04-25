@@ -13,6 +13,21 @@ wget -P /tests/inputData/ https://raw.githubusercontent.com/bmerlet90/tool-SBML2
 wget -P /tests/outputData/ https://raw.githubusercontent.com/bmerlet90/tool-SBML2MetexploreJsonGraph/v1.2.1/tests/outputData/ExpectedminiRec2.json
 wget -P /tests/outputData/ https://raw.githubusercontent.com/bmerlet90/tool-SBML2MetexploreJsonGraph/v1.2.1/tests/outputData/ExpectedUbFluxNet.json
 
-java -cp SBML2MetexploreJsonGraph.jar org.junit.runner.JUnitCore org.junit.runners.MethodSorters org.junit.runners.Parameterized phnmnl.tests.Test5_Main
+java -jar SBML2MetexploreJsonGraph.jar -inFile /tests/inputData/miniRec2.xml -outFile /tests/outputData/output.json -flux2Mapp
 
+if ! [ -e "/tests/outputData/output.json" ]; then
+    echo "Output file doesn't exist"
+    $Code=$Code+1
+fi
+
+rm /tests/outputData/output.json
+
+java -jar SBML2MetexploreJsonGraph.jar -inFile /tests/inputData/ubFluxNet.sbml -outFile /tests/outputData/output.json -flux2Mapp
+
+if ! [ -e "/tests/outputData/output.json" ]; then
+    echo "Output file doesn't exist"
+    $Code=$Code+1
+fi
+
+echo "Test suit finished"
 exit $code
