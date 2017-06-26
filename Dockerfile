@@ -26,7 +26,7 @@ RUN apt-get update && \
 
 # Test Scripts
 ADD runTest1.sh /usr/local/bin/runTest1.sh
-RUN chmod +x /usr/local/bin/runTest1.sh
+RUN chmod a+x /usr/local/bin/runTest1.sh
 
 
 ENTRYPOINT ["java", "-jar", "SBML2MetexploreJsonGraph.jar"]
