@@ -9,7 +9,7 @@ LABEL version="1.0"
 LABEL software="SBML2MetexploreJsonGraph"
 
 
-ENV TAG_NUMBER 1.2.1
+ENV TAG_NUMBER 1.2.3
 
 RUN apt-get update && \
 	apt-get install -y --no-install-recommends ant ant-optional && \
