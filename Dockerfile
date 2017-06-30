@@ -5,7 +5,7 @@ FROM java:8
 MAINTAINER PhenoMeNal-H2020 Project ( phenomenal-h2020-users@googlegroups.com )
 
 LABEL software.version="1.2"
-LABEL version="1.0"
+LABEL version="1.1"
 LABEL software="SBML2MetexploreJsonGraph"
 
 
