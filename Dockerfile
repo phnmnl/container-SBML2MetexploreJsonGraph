@@ -5,11 +5,11 @@ FROM java:8
 MAINTAINER PhenoMeNal-H2020 Project ( phenomenal-h2020-users@googlegroups.com )
 
 LABEL software.version="1.2"
-LABEL version="1.0"
+LABEL version="1.1"
 LABEL software="SBML2MetexploreJsonGraph"
 
 
-ENV TAG_NUMBER 1.2.1
+ENV TAG_NUMBER 1.2.3
 
 RUN apt-get update && \
 	apt-get install -y --no-install-recommends ant ant-optional && \
@@ -26,7 +26,7 @@ RUN apt-get update && \
 
 # Test Scripts
 ADD runTest1.sh /usr/local/bin/runTest1.sh
-RUN chmod +x /usr/local/bin/runTest1.sh
+RUN chmod a+x /usr/local/bin/runTest1.sh
 
 
 ENTRYPOINT ["java", "-jar", "SBML2MetexploreJsonGraph.jar"]
