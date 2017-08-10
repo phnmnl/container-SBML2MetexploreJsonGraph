@@ -11,8 +11,10 @@ LABEL software="SBML2MetexploreJsonGraph"
 
 ENV TAG_NUMBER 1.2.3
 
+ADD digicertca.crt /usr/local/share/ca-certificates/digicertca.crt
+
 RUN apt-get update && \
-	apt-get install -y --no-install-recommends ant ant-optional && \
+	apt-get install -y --no-install-recommends ant ca-certificates ant-optional && \
 	apt-get -y clean && \
 	apt-get -y autoremove && \
 	rm -rf /var/lib/{cache,log}/ /tmp/* /var/tmp/* && \
